@@ -1,2 +1,2 @@
 # projeto-forca
- Projeto de jogo de forca desenvolvido em C
+ Projeto de jogo da forca desenvolvido em C
