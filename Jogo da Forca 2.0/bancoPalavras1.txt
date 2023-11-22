@@ -1,5 +1,0 @@
-programa
-inteligente
-python
-java
-computador

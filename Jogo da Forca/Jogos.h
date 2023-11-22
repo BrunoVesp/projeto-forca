@@ -1,7 +1,7 @@
-/*
-Jogo da Forca
-*/
-
+//
+// Jogo da Forca
+//
+//
 //Bibliotecas Externas
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +12,7 @@ Jogo da Forca
 //Bibliotecas Internas
 
 //Definiçõesd e Suporte
-#define MAX_TENTATIVAS 6
+#define MAX_TENTATIVAS 8
 #define MAX_PALAVRA 50
 #define tamanho_palavra 50 // Tamanho máximo para cada palavra.
 #define tamanho_vetor 20 // Vetor para quantidade de palavras.
@@ -63,7 +63,7 @@ void armazenarRank(FILE *filer){
         exit(1);
     }
 	
-	char nomeWin[5];
+	char nomeWin[50];
 	printf("\nInforme seu nome para o Ranking: ");
 	scanf("%s", nomeWin);
 	fprintf(filer,"\n");
@@ -162,8 +162,12 @@ int Jogo(void) {
             if (!verificarLetra(palavra, palavraOculta, letra)) {
                 tentativas++;
                 printf("Letra incorreta! Tentativas restantes: %d\n", MAX_TENTATIVAS - tentativas);
+                system("pause");
+                system("cls");
             } else {
                 printf("Letra correta!\n");
+                system("pause");
+                system("cls");
             }
         } else {
             // Tentativa da palavra completa

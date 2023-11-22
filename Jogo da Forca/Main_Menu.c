@@ -1,16 +1,15 @@
-/*
-Menu Jogo da Forca
-*/
-
+//
+//Menu Jogo da Forca
+//
+//
 //Bibliotecas Externas
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-
 //Bibliotecas Internas
 #include "Jogos.h"
-//#include "Rank.h"
+#include "Rank.h"
 #include "Banco.h"
 
 
@@ -39,55 +38,12 @@ void menuJogo(int gameOp2){
 				system("cls");
 				break;
 			case 3:
+				main();
 				break;
 			default:
 				break;
 		}
 	}while(gameOp2 != 1);
-}
-
-//->Menu de Ranking
-void menuRank(){
-	int op_menu_rank;
-	int p2_switch;
-	do{
-		printf("---\n Bem Vindo ao Ranking do Jogo \n---");
-		printf("[ 1 ] Mostrar Ranking\n");
-		printf("[ 2 ] Menu Principal\n");
-		scanf("%d", &op_menu_rank);
-	
-		switch(op_menu_rank){
-			case 1:
-				//exibirRank();
-				break;
-			case 2:
-				break;
-			default:
-				break;
-		}
-	}while(op_menu_rank);
-}
-
-//->Menu Banco
-void menuBanco(int gameOp3){
-	do{
-		printf("---\n Banco de Palavras \n---");
-		printf("[ 1 ] Cadastrar Palavras\n");
-		printf("[ 2 ] Mostrar Palavras Cadastradas\n")
-		printf("[ 3 ] Menu Principal\n");
-		scanf("%d", &gameOp3);
-
-		switch(gameOp3){
-			case 1:
-				break;
-			case 2:
-				
-				break;
-			default:
-				break;
-		}
-	}while(gameOp3 != 2);
-	
 }
 
 //->Menu Creditos
@@ -106,12 +62,13 @@ void menuCreditos(int gameOp4){
 }
 
 //Menu Principal
-int main(){
+int main(void){
 	int gameOp;
 	int gameOp2;
 	int gameOp3;
 	int gameOp4;
 	int gameOp5;
+	int gameOp6;
 	do{
 		//opções do jogador(MENU)
 		printf("--- JOGO DA FORCA ---\n");
@@ -133,34 +90,36 @@ int main(){
 				system("cls");
 				break;
 			case 2:
-				menuRank(gameOp3);
+				Rank();
 				system("cls");
 				break;
 			case 3:
-				menuBanco(gameOp4);
+				Banco();
 				system("cls");
 				break;
 			case 4:
-				menuCreditos(gameOp4);
+				menuCreditos(gameOp5);
 				system("cls");
 				break;
 			case 5:
 				printf("Certeza de que deseja fechar o Jogo ?\n");
 				printf("      [ 1 ]Fechar      [2]Voltar\n");
-				scanf("%d", &gameOp5);
+				scanf("%d", &gameOp6);
 				system("cls");
-				if(gameOp5 == 1){
-					printf("Certo,fechando jogo...");
-					continue;
+				if(gameOp6 == 1){
+					printf("Certo,fechando jogo...\n");
+					system("pause");
+					exit(1);
+					break;
 				}
-				else if(gameOp5 == 2){
+				else if(gameOp6 == 2){
 					printf("Certo,voltando ao jogo...");
-					continue;
+					break;
 				}
 				system("cls");
 				break;
 			default:
 				break;
 		}
-	}while(gameOp5 != 1);
+	}while(gameOp6 != 1);
 }
