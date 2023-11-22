@@ -31,8 +31,8 @@ void menuJogo(int gameOp2){
 				break;
 			case 2:
 				printf("Objetivos do jogo\nRegras:\n");
-				printf("- Cada jogador tem 6 tentativas em caso de falha\n");
-				printf("- Os jogadores irão refezar os chutes a cada tentativa\n");
+				printf("- Cada jogador tem 8 tentativas em caso de falha\n");
+				printf("- Os jogadores irão revezar os chutes a cada tentativa\n");
 				printf("[ 1 ] Voltar");
 				scanf("%d",&gameOp2);
 				system("cls");
