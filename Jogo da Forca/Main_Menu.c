@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <locale.h>
 
 //Bibliotecas Internas
 #include "Jogos.h"
@@ -16,6 +17,7 @@
 //Funções dos Menus
 //->Menu Jogo
 void menuJogo(int gameOp2){
+	setlocale(0, "portuguese");
 	int op_menu_jogo;
 	do{
 		printf("---\n Bem Vindo ao Jogo da Forca \n---\n");
@@ -75,7 +77,7 @@ int main(void){
 		printf("[ 1 ] JOGAR\n");
 		printf("[ 2 ] RANKING\n");
 		printf("[ 3 ] ADICIONAR PALAVRAS\n");
-		printf("[ 4 ] CRÉDITOS\n");
+		printf("[ 4 ] CREDITOS\n");
 		printf("[ 5 ] SAIR\n");
 		
 		//Escolha do usuário
