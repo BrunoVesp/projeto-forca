@@ -8,6 +8,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+#include <locale.h>
 
 //Bibliotecas Internas
 
@@ -21,6 +22,8 @@
 
 // Função para escolher uma palavra aleatória do arquivo
 char *escolherPalavraAleatoria(const char *nomeArquivo) {
+	setlocale(0, "portuguese");
+	
     FILE *arquivo = fopen("BancoPalavras2.txt", "r");
     if (arquivo == NULL) {
         perror("Erro ao abrir o arquivo");
@@ -57,6 +60,8 @@ char *escolherPalavraAleatoria(const char *nomeArquivo) {
 }
 
 void armazenarRank(FILE *filer){
+	setlocale(0, "portuguese");
+	
 	if (filer == NULL) {
         printf("Arquivo não encontrado.\n");
         system("pause");
@@ -87,6 +92,8 @@ void inicializarPalavraOculta(char *palavraEscolhida, char *palavraOculta) {
 
 // Função para exibir a palavra oculta
 void exibirPalavraOculta(char *palavraOculta) {
+	setlocale(0, "portuguese");
+	
     printf("Palavra: %s\n", palavraOculta);
 }
 
@@ -111,11 +118,13 @@ int verificarPalavraCompleta(char *palavraEscolhida, char *tentativa) {
 }
 
 int Jogo(void) {
+	setlocale(0, "portuguese");
+	
     srand(time(NULL));
     char NomeWin[5];
     FILE *filer;
-    filer = fopen("Ranking.txt","a");
-
+    filer = fopen("LeRanking.txt","a");
+	
     int numJogadores;
 
     // Solicitar ao usuário o número de jogadores
@@ -125,11 +134,11 @@ int Jogo(void) {
     printf("[ 3 ] Três\n");
     printf("[ 4 ] Quatro\n");
     printf("[ 5++ ] 5 ou mais\n");
-    printf("Digite o numero de jogadores: ");
+    printf("Digite o número de jogadores: ");
     scanf("%d", &numJogadores);
 
     if (numJogadores <= 0) {
-        printf("Numero de jogadores invalido. Saindo...\n");
+        printf("Número de jogadores inválido. Saindo...\n");
         return 1;
     }
 

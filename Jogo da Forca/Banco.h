@@ -5,8 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-
+#include <locale.h>
 
 void copiarConteudo(FILE *file1, FILE *file2) {
     char bancoPalavra[50];
@@ -17,6 +16,8 @@ void copiarConteudo(FILE *file1, FILE *file2) {
 }
 
 void alocarPalavra(FILE *file2) {
+	setlocale(0, "portuguese");
+	
     if (file2 == NULL) {
         printf("Arquivo não encontrado.\n");
         system("pause");
@@ -32,6 +33,8 @@ void alocarPalavra(FILE *file2) {
 }
 
 void lerBancoPalavra(FILE *file1) {
+	setlocale(0, "portuguese");
+	
     char lerPalavras[100];
 
     if (file1 == NULL) {
@@ -50,6 +53,8 @@ void lerBancoPalavra(FILE *file1) {
 }
 
 int Banco(void) {
+	setlocale(0, "portuguese");
+	
     FILE *file1 = fopen("bancoPalavras1.txt", "r");
     if (file1 == NULL) {
         printf("Não foi possível abrir o arquivo.\n");

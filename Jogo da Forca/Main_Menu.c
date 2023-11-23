@@ -13,11 +13,11 @@
 #include "Rank.h"
 #include "Banco.h"
 
-
 //Funções dos Menus
 //->Menu Jogo
 void menuJogo(int gameOp2){
 	setlocale(0, "portuguese");
+	
 	int op_menu_jogo;
 	do{
 		printf("---\n Bem Vindo ao Jogo da Forca \n---\n");
@@ -50,6 +50,8 @@ void menuJogo(int gameOp2){
 
 //->Menu Creditos
 void menuCreditos(int gameOp4){
+	setlocale(0, "portuguese");
+	
 	printf("--- Desenvolvedores ---\n");
 	printf("Lider do projeto e Programador:\n - Caio Justino\n");
 	printf("Programadores:\n - Paulo Fernandes\n - Caio Araújo\n - Bruno Hebert\n - Marllon Brenno\n");
@@ -65,6 +67,8 @@ void menuCreditos(int gameOp4){
 
 //Menu Principal
 int main(void){
+	setlocale(0, "portuguese");
+	
 	int gameOp;
 	int gameOp2;
 	int gameOp3;
@@ -77,7 +81,7 @@ int main(void){
 		printf("[ 1 ] JOGAR\n");
 		printf("[ 2 ] RANKING\n");
 		printf("[ 3 ] ADICIONAR PALAVRAS\n");
-		printf("[ 4 ] CREDITOS\n");
+		printf("[ 4 ] CRÉDITOS\n");
 		printf("[ 5 ] SAIR\n");
 		
 		//Escolha do usuário
@@ -109,13 +113,13 @@ int main(void){
 				scanf("%d", &gameOp6);
 				system("cls");
 				if(gameOp6 == 1){
-					printf("Certo,fechando jogo...\n");
+					printf("Certo, fechando jogo...\n");
 					system("pause");
 					exit(1);
 					break;
 				}
 				else if(gameOp6 == 2){
-					printf("Certo,voltando ao jogo...");
+					printf("Certo, voltando ao jogo...");
 					break;
 				}
 				system("cls");
